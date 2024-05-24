@@ -39,6 +39,8 @@ const app = new App({
         const date = chrono.parseDate(command.text, {
             timezone: tz,
         })
+
+        if (!date) return await respond("Unable to parse date. Please try again.")
         await say({
             "blocks": [
                 {
